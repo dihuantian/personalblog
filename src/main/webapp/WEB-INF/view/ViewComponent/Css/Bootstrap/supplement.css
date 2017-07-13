@@ -1,0 +1,278 @@
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow:hidden;
+}
+.panel_width{
+    margin-top: 40px;
+    width: 1000px;
+}
+
+.panel_width_left_child{
+    width: 200px;
+    display: inline-block;
+}
+.list-group-item_height{
+    height: 60px;
+    line-height: 40px;
+}
+
+.glyphicon-align-position{
+    padding-right: 20px;
+}
+
+.panel_child_width{
+    width: 794px;
+}
+
+.panel-child-page-header-height{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 20px;
+    margin-left: 40px;
+    line-height: 20px;
+    padding-left: 10px;
+    border-left: 3px solid #00a1d6;
+}
+
+.list-group-position{
+    padding-left: 50px;
+}
+
+.list-border-none{
+    border: none;
+}
+
+.span-size{
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+}
+
+input[type=text][type=password]{
+    text-indent: 5px;
+}
+
+.input-position{
+    margin-left: 80px;
+}
+
+textarea.hobbies-textarea{
+    width: 400px;
+    height:60px;
+}
+
+.span-hobbies-position{
+    float: left;
+    margin-top: 0;
+}
+
+.diary-frame-windos{
+    border: 1px solid #dcdcdc;
+    height: 110px;
+    width: 570px;
+    float: right;
+    margin-top: 0;
+    display: inline-block;
+}
+
+.diary-img-frame-avatar{
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    border-radius: 120px;
+    margin-bottom: 10px;
+}
+
+.diary-img-frame-position{
+    display: inline-block;
+}
+
+.diary-write-frame{
+    height: 170px;
+    width: 736px;
+    margin-left: 40px;
+}
+
+.diary-textarea-size{
+    width: 714px;
+    height: 100px;
+}
+
+.diary-textarea-frame{
+    display: inline-block;
+}
+
+.diary-textarea-position{
+    width: 594px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 5px;
+    border-radius: 4px;
+}
+
+.diary-textarea-number{
+    float: right;
+    margin-right: 6px;
+}
+
+.diary-submit-size{
+    display: inline-block;
+    margin:0;
+    float: right;
+    margin-top: 10px;
+    margin-right: 16px;
+    height: 100px;
+    width:100px;
+}
+
+/*我的头像*/
+
+.my-avatar-frame{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #e5e9ef;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.my-replace-avatar{
+    display:inline-block;
+    height: 54px;
+    width: 54px;
+    border: 1px solid #00a1d6;;
+    background-color: #00a1d6;
+    color: #ffffff;
+    border-radius: 27px;
+}
+
+.my-replace-avatar-position{
+    margin-top: 73px;
+    margin-left: -76px;
+}
+
+p.replace-avatar{
+    font-size: 10px;
+    text-decoration: none;
+}
+
+p.replace-avatar-line2{
+    position: relative;
+    top: 10px;
+}
+
+.my-avatar{
+    display: inline-block;
+    border: 1px solid #e5e9ef;;
+    border-radius: 45px;
+    margin-left: 20px;
+    margin-top: -25px;
+}
+
+.upload-button{
+    margin-bottom: 12px;
+}
+
+.upload-confirm{
+    display: none;
+}
+
+.comment-frame{
+    text-align: left;
+    margin-left: 40px;
+    border-bottom: 1px solid #e5e9ef;
+    margin-bottom: 16px;
+    margin-right: 20px;
+}
+
+.comment-people{
+    color: #6d757a;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+}
+
+.comment-content{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.comment-number{
+    margin-right: 20px;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.number{
+    margin-left: -6px;
+    color: #6d757a;
+}
+
+.praise-low-frame{
+    display: inline-block;
+    float: right;
+    margin-right: 100px;
+}
+
+.gesture{
+    cursor: pointer;
+}
+
+.add-album{
+    border: 2px dashed #b8c0cc;
+    width: 200px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    display: inline-block;
+}
+
+.add-1{
+    width: 32px;
+    height:32px;
+    background: url("../img/plus.png") no-repeat center;
+    display: inherit;
+}
+
+.add-2{
+    width: 32px;
+    height:32px;
+    background: url("../img/add.png") no-repeat center;
+    display: inherit;
+}
+
+.add-album-name{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: 10000;
+    text-align: center;
+    display: none;
+}
+
+.panel-size{
+    width: 400px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.confirm-cancel{
+    margin-top: 10px;
+}
+
+.confirm-button{
+    margin-right: 20px;
+}
+
+.colse-span{
+    text-align: center;
+    display: inline-block;
+    float: right;
+    width: 40px;
+    height: 30px;
+}

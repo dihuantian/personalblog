@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <context:component-scan base-package="com.blog.entity" />
+    <context:component-scan base-package="com.blog.serviceImpl" />
+    <context:component-scan base-package="com.blog.dao" />
+    <context:component-scan base-package="com.blog.customEntity" />
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:jdbc.properties" />
+    </bean>
+
+    <bean id="dataSourceJdbc" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${dataSource.driverClassName}"></property>
+        <property name="url" value="${dataSource.url}"></property>
+        <property name="username" value="${dataSource.username}"></property>
+        <property name="password" value="${dataSource.password}"></property>
+    </bean>
+
+<!--    &lt;!&ndash;配置数据源&ndash;&gt;
+    <bean id="dataSourceDbcp" class="org.apache.commons.dbcp.BasicDataSource">
+        &lt;!&ndash;驱动连接名&ndash;&gt;
+        <property name="driverClassName" value="${dataSource.driverClassName}"/>
+        &lt;!&ndash;连接路径&ndash;&gt;
+        <property name="url" value="${dataSource.url}"/>
+        &lt;!&ndash;连接用户名&ndash;&gt;
+        <property name="username" value="${dataSource.username}"/>
+        &lt;!&ndash;连接密码&ndash;&gt;
+        <property name="password" value="${dataSource.password}"/>
+        &lt;!&ndash;连接词空闲连接数&ndash;&gt;
+        <property name="initialSize" value="${dataSource.initialSize}"/>
+        &lt;!&ndash;连接池最大连接数&ndash;&gt;
+        <property name="maxActive" value="${datasource.maxActive}"/>
+        &lt;!&ndash;连接池最大空闲数&ndash;&gt;
+        <property name="maxIdle" value="${dataSource.maxIdle}"/>
+        &lt;!&ndash;连接池最小空闲数&ndash;&gt;
+        <property name="minIdle" value="${dataSource.minIdle}"/>
+        &lt;!&ndash;获取连接最大等待时间&ndash;&gt;
+        <property name="maxWait" value="${dataSource.maxWait}"/>
+    </bean>-->
+
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSourceJdbc" />
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+        <property name="mapperLocations" value="classpath*:com/blog/mapper/*Mapper.xml" />
+    </bean>
+
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" >
+        <property name="sqlSessionFactoryBeanName" value="sessionFactory" />
+        <property name="basePackage" value="com.blog.dao" />
+    </bean>
+
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSourceJdbc" />
+    </bean>
+
+    <!-- transaction-manager：引用上面定义的事务管理器-->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

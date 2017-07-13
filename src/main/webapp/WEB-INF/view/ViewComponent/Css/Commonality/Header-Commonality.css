@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+}
+div.header-Login-ico{
+    display: inline-block;
+    margin-top: 35px;
+    margin-left: 70px;
+}
+p.header-Welcome-word{
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 18px;
+}
+div.header-background{
+    height: 230px;
+    background-image: url("../../Image/header-Image/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+div.header-Navigation-Bar{
+    width: 100%;
+    height: 80px;
+    margin-top: 20px;
+}
+div.header-Navigation-Bar-background{
+    background-color: #000000;
+    z-index: 100;
+    opacity: .75;
+}
+ul.header-Navigation-Bar-modify{
+    display: block;
+    list-style-type: none;
+    margin-top: 0;
+}
+li.li-modify{
+    height: 80px;
+    z-index: 1000;
+    font-size: 14px;
+}
+li.li-position{
+    float: left;
+    padding: 0 5px;
+}
+a.a-modify{
+    color: #ffffff;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 25px;
+    line-height: 30px;
+    text-decoration: none;
+}
+form.form-search{
+    display: inline-block;
+    float: right;
+    margin: 12px 100px 0 0;
+}
+input.input-search{
+    width: 307px;
+    height: 34px;
+    font-size: 14px;
+    background-color: #000000;
+    border-radius: 15px;
+    border: 1px solid #5D5D5D;
+    text-indent: 15px;
+    color: #ffffff;
+    outline:none
+}
+button.search-button{
+    border-width: 0 1px 0 0;
+    border-radius: 15px;
+    position: relative;
+    top: 11px;
+    left: -40px;
+    width: 34px;
+    height: 34px;
+    background: url("../../Image/header-Image/header-btn-search.png") #000000;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+a:visited{
+    border: 1px solid #2aabd2;
+}
+a:hover{
+    color: #2aabd2;
+    border: 1px solid #2aabd2;
+}

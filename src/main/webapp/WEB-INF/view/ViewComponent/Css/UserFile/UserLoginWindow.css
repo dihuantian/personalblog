@@ -1,0 +1,78 @@
+div.loginWindow{
+    display: inline-block;
+}
+div.loginCharacter{
+    color: #969696;
+    text-align: center;
+    font-size: 22px;
+}
+div.loginFormWindow{
+    text-align: center;
+}
+div.loginForm{
+    margin-top: 10px;
+}
+div.loginRestsLink{
+    margin-top: 20px;
+    color: #969696;
+}
+input.textBoxOrnament{
+    text-indent: 10px;
+    width: 350px;
+    height: 40px;
+    margin-top: 13px;
+    font-size: 16px;
+    border: 1px solid #d3d3d3;
+}
+input.textLocation{
+
+}
+input.passwordLocation{
+
+}
+input.LoginButton{
+    width: 350px;
+    height: 38px;
+    background-color: #ed5565;
+    border: 0;
+    border-radius: 4px;
+    line-height: 38px;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 10px;
+}
+input:focus {
+    outline: none;
+    border-color: #ed5565;
+    box-shadow: 0 0 6px #ed5565;
+}
+iframe.verificationFarm{
+    width: 350px;
+    height: 50px;
+    margin-top: 10px;
+    border: none;
+}
+input.selfMotionLogin{
+    float: left;
+}
+a.register {
+    color: #969696;
+    text-decoration: none;
+}
+a.findPassword{
+    color: #ed5565;
+    text-decoration: none;
+    float: right;
+}
+a.qqLogin{
+    background: url("../../Image/User-Image/icon-login-QQ.png");
+    display: inline-block;
+    width: 62px;
+    height: 62px;
+}
+a.weiBoLogin{
+    background: url("../../Image/User-Image/icon-login-weiBo.png");
+    display: inline-block;
+    width: 62px;
+    height: 62px;
+}

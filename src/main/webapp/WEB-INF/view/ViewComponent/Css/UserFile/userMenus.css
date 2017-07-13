@@ -1,0 +1,18 @@
+body{
+    background-color: #fafafa;
+}
+
+table.userMenusBorder {
+    border-collapse:collapse;
+    border: 1px solid #dcdcdc;
+    text-align: center;
+}
+td {
+    width: 150px;
+    height: 43px;
+    border: 1px solid #dcdcdc;
+}
+a{
+    color: #0f0f0f;
+    text-decoration: none;
+}

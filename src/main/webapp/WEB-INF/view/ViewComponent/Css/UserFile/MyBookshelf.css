@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    border: 1px solid #000000;
+}
+ul{
+    padding-left: 0;
+    height: 220px;
+    width: 740px;
+    background: url("../../Image/User-Image/bookself-bg.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    border: 1px solid #ffff00;
+}
+li{
+    float: left;
+    width: 120px;
+    height: 166px;
+    margin: 26px 8px 0 16px;
+    list-style-type: none;
+    border: 1px solid #1b6d85;
+}
+a{
+    text-decoration: none;
+}
+a.bookImage{
+    width: 120px;
+    height: 166px;
+    border: 1px solid #e99d19;
+}
+ul.hierarchyBookshelf{
+    background: url("../../Image/User-Image/bookself-bg.png");
+}
+img.bookImagePosition{
+    width: 118px;
+    height: 164px;
+}
+div.bookTitleBar{
+    width: 120px;
+    height: 32px;
+    position: relative;
+    top: -34px;
+    opacity: .60;
+    z-index: 1000;
+    text-align: center;
+    background-color: #000;
+}
+span.bookTitle{
+    color: #ffffff;
+    line-height: 32px;
+    font-size: 14px;
+    font-family: 新宋体;
+    overflow: hidden;
+}

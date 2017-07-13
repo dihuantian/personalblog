@@ -1,0 +1,41 @@
+div.messageTitleBar{
+    border: 1px dashed #e8e8e8;
+    border-width: 0 0 1px 0;
+    display: inline-block;
+    width: 740px;
+    height: 40px;
+}
+ul.messageTitleBarLocation{
+    padding-left: 0;
+}
+li.messageTitleBorder{
+    list-style: none;
+    border: solid #2aabd2;
+    border-width: 0 0 0 6px;
+    padding-left: 20px;
+    font-size: 20px;
+
+}
+p{
+    display: inline;
+}
+ul.userInformationUl{
+    list-style: none;
+    padding-left: 0;
+    padding-top: 0;
+}
+li.messageUserInformation_Item{
+    padding-top: 30px;
+}
+div.userInformationDiv{
+    display: inline-block;
+    width: 740px;
+}
+a.alterMessage{
+    color: #999;
+    padding-left: 10px;
+    text-decoration: none;
+}
+a:hover{
+    color: #ed5565;
+}

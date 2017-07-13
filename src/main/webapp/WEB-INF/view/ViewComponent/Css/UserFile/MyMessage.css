@@ -1,0 +1,42 @@
+li.titleBorder{
+    list-style: none;
+    border: solid #2aabd2;
+    border-width: 0 0 0 6px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+ul.titleBarLocation{
+    padding-left: 0;
+}
+div.messageTitleBar{
+    border: 1px dashed #e8e8e8;
+    border-width: 0 0 1px 0;
+    display: inline-block;
+    width: 740px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+div.systemMessageDiv{
+    display: inline-block;
+}
+ul.systemMessage{
+    list-style: none;
+    padding-left: 0;
+}
+li.systenMessageLocation{
+    float: left;
+    padding-left: 20px;
+}
+div.systemMessageTitleOrTime{
+    display: inline-block;
+    height: 40px;
+}
+div.systemHintMessage{
+    padding-left: 20px;
+}
+div.systemMessage{
+    display: inline-block;
+    height: 121px;
+    width: 740px;
+    border-bottom: 1px solid #e8e8e8;
+}
