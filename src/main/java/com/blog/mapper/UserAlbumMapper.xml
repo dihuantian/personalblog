@@ -34,6 +34,15 @@
     where albumId = #{albumid,jdbcType=INTEGER}
   </select>
 
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+
+    select
+    <include refid="Base_Column_List" />
+    from user_album
+    where albumName=#{albumname,jdbcType=VARCHAR}
+
+  </select>
+
   <select id="selectByAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

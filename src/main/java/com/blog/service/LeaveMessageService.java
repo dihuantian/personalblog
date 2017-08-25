@@ -10,7 +10,7 @@ import java.util.List;
 public interface LeaveMessageService {
 
     /*将留言写进数据库*/
-    boolean submitCommentSave(LeaveMessage leaveMessage);
+    int submitCommentSave(LeaveMessage leaveMessage);
 
     /*获取用户是否对留言评论*/
     int getUserComment(int leaveMessageId,int userId );

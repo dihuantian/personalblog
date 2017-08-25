@@ -1,7 +1,10 @@
 package com.blog.dao;
 
 import com.blog.entity.UserInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface UserInfoMapper {
@@ -54,4 +57,8 @@ public interface UserInfoMapper {
     int updateByPrimaryKey(UserInfo record);
 
     UserInfo selectByUserName(String userName);
+
+    List<UserInfo> selectReverseInquire(@Param("userInfoList") List<UserInfo> userInfoList);
+
+    List<UserInfo> selectAll();
 }

@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,59 +13,32 @@
 <body>
     <div class="bs-example" data-example-id="simple-nav-tabs">
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Profile</a></li>
-            <li role="presentation"><a href="#">Messages</a></li>
+            <li role="presentation"><a href="/">主站</a></li>
         </ul>
     </div>
 
     <div class="panel panel-default panel_width col-center-block">
         <div class="panel panel-default panel_width_left_child">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item_height">
-                    <span class="glyphicon glyphicon-home glyphicon-align-position" aria-hidden="true"></span>
-                    Cras justo odio
-                </a>
-                <a href="#" class="list-group-item list-group-item_height">
-                    <span class="glyphicon glyphicon-user glyphicon-align-position" aria-hidden="true"></span>
-                    我的信息
-                </a>
-                <a href="#" class="list-group-item list-group-item_height">
-                    <span class="glyphicon glyphicon-upload glyphicon-align-position" aria-hidden="true"></span>
-                    我的头像
-                </a>
-                <a href="#" class="list-group-item list-group-item_height">
-                    <span class="glyphicon glyphicon-comment glyphicon-align-position" aria-hidden="true"></span>
-                    个人日记
-                </a>
-                <a href="#" class="list-group-item list-group-item_height active">
-                    <span class="glyphicon glyphicon-align-left glyphicon-align-position" aria-hidden="true"></span>
-                    博文评论
-                </a>
-            </div>
+            <c:import url="LeftNavBar.jsp"></c:import>
         </div>
         <div class="panel panel-default panel_child_width" style="float: right;text-align: center;">
-            <div class="page-header panel-child-page-header-height" style="text-align: left">我的头像</div>
-            <div class="comment-frame">
-                <p class="comment-people">评论人</p>
-                <p class="comment-content">评论内容：嘿，宝贝们！喜欢这一作吗！跟小盈的第一次合作！还
-                    这一作吗！跟小盈的第一次合作！还
-                    这一作吗！跟小盈的第一次合作！还有现在停车场还收费。。这操作真的很骚。。(<_<)，这里小不点啊！来晚了。。我可以上热评吗。。。</p>
-                <div>
-                    <span class="comment-people comment-number">#65</span>
-                    <a href="#" class="comment-people comment-number">来自安卓客户端</a>
-                    <div class="praise-low-frame">
-                        <span class="glyphicon glyphicon-thumbs-up">
-                            <span class="number comment-content comment-number">(40)</span>
-                        </span>
-                            <span class="glyphicon glyphicon-thumbs-down">
-                            <span class="number comment-content comment-number">(40)</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <div class="page-header panel-child-page-header-height" style="text-align: left">博文评论</div>
+            <c:forEach var="item" items="${appreciationList}" varStatus="status">
+                <c:import url="MessageItem.jsp">
+                    <c:param name="leaveamessageid" value="${item.appreciationid}"></c:param>
+                    <c:param name="sendmassageusername" value="${item.userInfo.username}"></c:param>
+                    <c:param name="leaveamessagecontent" value="${item.appreciationcontent}"></c:param>
+                    <c:param name="low" value="${item.low}"></c:param>
+                    <c:param name="procrastination" value="${item.procrastination}"></c:param>
+                    <c:param name="status" value="${status.count}"></c:param>
+                    <c:param name="flag" value="1"></c:param>
+                </c:import>
+            </c:forEach>
+            <script>
+                $('.comment-frame').addClass('mobile');
+            </script>
         </div>
     </div>
-    <script src="../../JavaScript/CommonalityJavaQuery/upload.js"></script>
+    <script src="../../JavaScript/BlogPages/BackstageJs.js"></script>
 </body>
 </html>

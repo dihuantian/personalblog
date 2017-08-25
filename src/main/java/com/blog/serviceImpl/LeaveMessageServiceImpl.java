@@ -63,13 +63,13 @@ public class LeaveMessageServiceImpl implements LeaveMessageService {
     /*
     * 将留言写进数据库
     * */
-    public boolean submitCommentSave(LeaveMessage leaveMessage){
+    public int submitCommentSave(LeaveMessage leaveMessage){
 
         if(illegalKeywordsService.keywordsJudgment(leaveMessage.getLeaveamessagecontent())==true){
-            leaveMessageMapper.insert(leaveMessage);
-            return true;
+
+            return leaveMessageMapper.insert(leaveMessage);
         }
-        return false;
+        return 0;
     }
 
     /*

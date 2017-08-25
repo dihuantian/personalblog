@@ -11,10 +11,10 @@
     <title>Register页面</title>
 </head>
 <body>
-    <jsp:include page="../ViewComponent/JSP/Commonality/Header-Commonality.jsp"></jsp:include>
+  <%--  <jsp:include page="../ViewComponent/JSP/Commonality/Header-Commonality.jsp"></jsp:include>--%>
     <div style="text-align: center; margin-top: 30px;margin-bottom: 30px;">
         <jsp:include page="../ViewComponent/JSP/UserFile/UserRegisterWindow.jsp"></jsp:include>
     </div>
-    <jsp:include page="../ViewComponent/JSP/Commonality/Footer-Commonality.jsp"></jsp:include>
+  <%--  <jsp:include page="../ViewComponent/JSP/Commonality/Footer-Commonality.jsp"></jsp:include>--%>
 </body>
 </html>

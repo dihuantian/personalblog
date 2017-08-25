@@ -12,19 +12,18 @@ import java.util.HashSet;
  */
 
 /*会话Session列表*/
-public class GetSessionSave implements HttpSessionListener{
+public class GetSessionSave implements HttpSessionListener {
 
 
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
-        HttpSession session=httpSessionEvent.getSession();
-        ServletContext application=session.getServletContext();
+        HttpSession session = httpSessionEvent.getSession();
+        ServletContext application = session.getServletContext();
         // 在application范围由一个HashSet集保存所有的session
-        HashSet sessSet= (HashSet) application.getAttribute("sessions");
-        if(session==null){
-            sessSet=new HashSet();
+        HashSet<HttpSession> sessSet = (HashSet) application.getAttribute("sessions");
+        if (sessSet == null) {
+            sessSet = new HashSet();
             application.setAttribute("sessions", sessSet);
         }
-
         // 新创建的session均添加到HashSet集中
         sessSet.add(session);
     }

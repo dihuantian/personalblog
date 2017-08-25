@@ -14,7 +14,7 @@
     <result column="career" property="career" jdbcType="VARCHAR" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
     <result column="userAvatar" property="useravatar" jdbcType="VARCHAR" />
-    <result column="registerTime" property="registertime" jdbcType="DATE" />
+    <result column="registerTime" property="registertime" javaType="java.sql.Timestamp" jdbcType="DATE" />
   </resultMap>
   <sql id="Base_Column_List" >
     <!--
@@ -34,6 +34,21 @@
     <include refid="Base_Column_List" />
     from user_info
     where userId = #{userid,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectReverseInquire" resultMap="BaseResultMap" parameterType="java.util.Arrays">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    <where>
+      userId not in <foreach collection="userInfoList" index="index"  item="itemId" open="(" separator="," close=")">#{itemId.userid,jdbcType=INTEGER}</foreach>
+    </where>
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from user_info
   </select>
 
   <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String">
@@ -166,10 +181,14 @@
     update user_info
     set userName = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      userLimit = #{userlimit,jdbcType=BIT},
+      <if test="userlimit!=null">
+        userLimit = #{userlimit,jdbcType=BIT},
+      </if>
       career = #{career,jdbcType=VARCHAR},
       introduction = #{introduction,jdbcType=VARCHAR},
-      userAvatar = #{useravatar,jdbcType=VARCHAR},
+      <if test="useravatar!=null">
+        userAvatar = #{useravatar,jdbcType=VARCHAR},
+      </if>
       registerTime = #{registertime,jdbcType=DATE}
     where userId = #{userid,jdbcType=INTEGER}
   </update>

@@ -3,6 +3,8 @@ package com.blog.dao;
 import com.blog.entity.BowenAppreciation;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface BowenAppreciationMapper {
     /**
@@ -52,4 +54,6 @@ public interface BowenAppreciationMapper {
      * @mbggenerated Fri Jun 23 16:50:23 CST 2017
      */
     int updateByPrimaryKey(BowenAppreciation record);
+
+    List<BowenAppreciation> selectRangeAll(int start,int end);
 }

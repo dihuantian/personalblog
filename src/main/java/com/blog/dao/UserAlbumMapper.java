@@ -55,6 +55,7 @@ public interface UserAlbumMapper {
      */
     int updateByPrimaryKey(UserAlbum record);
 
+    UserAlbum selectByName(String albumName);
 
     List<UserAlbum> selectByAll();
 }

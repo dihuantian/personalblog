@@ -11,42 +11,62 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--扫描controller包下的mvc注解-->
-    <context:component-scan base-package="com.blog.controller" />
+    <context:component-scan base-package="com.blog.controller"/>
 
     <context:annotation-config/>
 
-    <!--允许使用项目的静态资源-->
-    <mvc:default-servlet-handler />
-    <mvc:resources location="/WEB-INF/view/ViewComponent/Css/" mapping="/Css/**" />
-    <mvc:resources location="/WEB-INF/view/ViewComponent/Image/" mapping="/Image/**" />
-    <mvc:resources location="/WEB-INF/view/ViewComponent/JavaScript/" mapping="/JavaScript/**" />
-    <mvc:resources location="/WEB-INF/view/ViewComponent/JSP/" mapping="/JSP/**"  />
-    <mvc:resources location="/WEB-INF/view/LoginAndRegister/" mapping="**" />
 
-    <mvc:default-servlet-handler />
-    <!-- 启用spring mvc 注解 -->
-
+    <!--使用@ResponseBody返回JSON字符中文乱码转换-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/html;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
 
     <!--默认注解支持-->
     <mvc:annotation-driven>
-        <mvc:async-support default-timeout="5000" />
+        <mvc:async-support default-timeout="5000"/>
     </mvc:annotation-driven>
+
+    <!--后台资源-->
+    <mvc:resources location="/images/" mapping="/images/**"/>
+    <mvc:resources location="/tempUpload/" mapping="/tempUpload/**"/>
+    <mvc:resources location="/WEB-INF/view/ViewComponent/Css/" mapping="/Css/**"/>
+    <mvc:resources location="/WEB-INF/view/ViewComponent/Image/" mapping="/Image/**"/>
+    <mvc:resources location="/WEB-INF/view/ViewComponent/JavaScript/" mapping="/JavaScript/**"/>
+    <mvc:resources location="/WEB-INF/view/ViewComponent/JSP/" mapping="/JSP/**"/>
+    <mvc:resources location="/WEB-INF/view/ViewComponent/UploadPlugin/" mapping="/UploadPlugin/**"/>
+    <mvc:resources location="/WEB-INF/view/LoginAndRegister/" mapping="**"/>
+    <!--允许使用项目的静态资源-->
+
 
     <!--对JSp视图请求的解析-->
     <bean id="JspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--文件上传-->
-    <bean id="commonsMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="6291456" />
-        <property name="maxUploadSizePerFile" value="1048576" />
-        <property name="preserveFilename" value="true" />
+    <mvc:default-servlet-handler/>
+
+    <!--文件上传，注意配置最大上传请求大小-->
+    <bean id="commonsMultipartResolver" class="com.blog.util.UploadCommonsMultipartResolver">
+        <property name="maxUploadSize" value="209715200"/>
+        <property name="maxInMemorySize" value="2097152" />
+        <property name="preserveFilename" value="true"/>
+        <property name="uploadTempDir" value="tempUpload" />
     </bean>
 
     <!--超出上传最大大小值是跳转指定路径-->
-    <bean id="simpleMappingExceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    <bean id="simpleMappingExceptionResolver"
+          class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
                 <!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到webapp目录下的uploadSizeError.jsp页面 -->
@@ -54,5 +74,13 @@
             </props>
         </property>
     </bean>
+
+    <!--SpringMVC拦截器-->
+    <!--<mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.blog.filterAuthority.CharEncoding" />
+        </mvc:interceptor>
+    </mvc:interceptors>-->
 
 </beans>

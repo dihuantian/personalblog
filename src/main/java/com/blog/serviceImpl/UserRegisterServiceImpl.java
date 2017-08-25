@@ -4,6 +4,7 @@ import com.blog.customEntity.UserRegisterInfo;
 import com.blog.dao.UserInfoMapper;
 import com.blog.entity.UserInfo;
 import com.blog.service.UserRegisterService;
+import com.blog.util.UtilChangeSqlDate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -42,7 +43,7 @@ public class UserRegisterServiceImpl implements UserRegisterService {
 
         }else{
             savaRegisterEntity(userRegisterInfo);
-            userInfoMapper.insert(userInfo);
+            return userInfoMapper.insert(userInfo);
         }
 
         return 0;
@@ -54,8 +55,8 @@ public class UserRegisterServiceImpl implements UserRegisterService {
     public void savaRegisterEntity(UserRegisterInfo userRegisterInfo) {
         userInfo.setUsername(userRegisterInfo.getUserName());
         userInfo.setPassword(userRegisterInfo.getPassword());
-        userInfo.setUserlimit(userRegisterInfo.getUserLimit());
-        userInfo.setUseravatar(userRegisterInfo.getUserAvatar());
-        userInfo.setRegistertime(userRegisterInfo.getRegisterTime());
+        userInfo.setUserlimit(false);
+        userInfo.setUseravatar("\\UploadFile\\Images\\blogger\\bloggerLENOVO-幻天帝 - 人\\1491266203712.png\\");
+        userInfo.setRegistertime(new UtilChangeSqlDate().getSqlDate());
     }
 }

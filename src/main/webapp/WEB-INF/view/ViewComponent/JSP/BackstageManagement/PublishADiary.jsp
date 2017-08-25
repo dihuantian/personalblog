@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,7 @@
 <body>
 <div class="bs-example" data-example-id="simple-nav-tabs">
     <ul class="nav nav-tabs">
-        <li role="presentation"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
+        <li role="presentation"><a href="/">主站</a></li>
     </ul>
 </div>
 

@@ -56,4 +56,8 @@ public interface BowenMapper {
     int updateByPrimaryKey(Bowen record);
 
     List<Bowen> selectAll();
+
+    List<Bowen> selectByRange(int start,int end);
+
+    int selectAllQuantity();
 }

@@ -5,22 +5,22 @@ package com.blog.customEntity;
  */
 public class UserLoginInfo {
 
-    private String userName;
-    private String password;
+    private String userAccountNumber;
+    private String userPassword;
 
-    public String getUserName() {
-        return userName;
+    public String getUserAccountNumber() {
+        return userAccountNumber;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserAccountNumber(String userAccountNumber) {
+        this.userAccountNumber = userAccountNumber;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 }

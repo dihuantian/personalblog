@@ -2,6 +2,7 @@ package com.blog.service;
 
 import com.blog.entity.Image;
 import com.blog.entity.UserAlbum;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -20,6 +21,8 @@ public interface AlbumManagementService {
 
     List<Image> getAllImage(int albumId);
 
-    boolean uploadImage(Image image);
+    boolean uploadImage(MultipartFile[] files,String albumName);
+
+    UserAlbum getSingAlbum(String albumName);
 
 }

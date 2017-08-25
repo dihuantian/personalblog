@@ -9,12 +9,13 @@
 <html>
 <head>
     <title>Login页面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-    <jsp:include page="../ViewComponent/JSP/Commonality/Header-Commonality.jsp"></jsp:include>
+<%--    <jsp:include page="../ViewComponent/JSP/Commonality/Header-Commonality.jsp"></jsp:include>--%>
     <div style="text-align: center; margin-top: 30px;margin-bottom: 30px;">
          <jsp:include page="../ViewComponent/JSP/UserFile/UserLoginWindow.jsp"></jsp:include>
     </div>
-    <jsp:include page="../ViewComponent/JSP/Commonality/Footer-Commonality.jsp"></jsp:include>
+   <%-- <jsp:include page="../ViewComponent/JSP/Commonality/Footer-Commonality.jsp"></jsp:include>--%>
 </body>
 </html>

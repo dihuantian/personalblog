@@ -16,4 +16,10 @@ public interface BowenService {
     List<Bowen> getAllBowen();
 
     Bowen getBowen(int bowenId);
+
+    List<Bowen> getRangeBowen(int pages);
+
+    int getBowenQuantity();
+
+    List<Bowen> randomArray(List<Bowen> allBowen);
 }

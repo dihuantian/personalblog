@@ -91,8 +91,9 @@ textarea.hobbies-textarea{
 
 .diary-write-frame{
     height: 170px;
-    width: 736px;
-    margin-left: 40px;
+    width: 718px;
+    margin-left: 6px;
+    margin-top: 6px;
 }
 
 .diary-textarea-size{
@@ -105,7 +106,7 @@ textarea.hobbies-textarea{
 }
 
 .diary-textarea-position{
-    width: 594px;
+    width: 588px;
     margin-top: 10px;
     margin-left: 10px;
     padding-left: 5px;
@@ -122,7 +123,7 @@ textarea.hobbies-textarea{
     margin:0;
     float: right;
     margin-top: 10px;
-    margin-right: 16px;
+    margin-right: 10px;
     height: 100px;
     width:100px;
 }
@@ -181,8 +182,9 @@ p.replace-avatar-line2{
 }
 
 .comment-frame{
+    width: 718px;
     text-align: left;
-    margin-left: 40px;
+    margin-left: 6px;
     border-bottom: 1px solid #e5e9ef;
     margin-bottom: 16px;
     margin-right: 20px;
@@ -194,6 +196,7 @@ p.replace-avatar-line2{
 }
 
 .comment-content{
+    padding:0 6px 0 6px;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
@@ -203,6 +206,7 @@ p.replace-avatar-line2{
     margin-right: 20px;
     font-size: 10px;
     font-weight: 400;
+    padding-left: 10px;
 }
 
 .number{
@@ -223,7 +227,7 @@ p.replace-avatar-line2{
 .add-album{
     border: 2px dashed #b8c0cc;
     width: 200px;
-    height: 150px;
+    height: 180px;
     line-height: 150px;
     text-align: center;
     display: inline-block;
@@ -232,15 +236,17 @@ p.replace-avatar-line2{
 .add-1{
     width: 32px;
     height:32px;
-    background: url("../img/plus.png") no-repeat center;
+    background: url(../../../../../images/plus.png) no-repeat center;
     display: inherit;
+    margin-top: 68px;
 }
 
 .add-2{
     width: 32px;
     height:32px;
-    background: url("../img/add.png") no-repeat center;
+    background: url(../../../../../images/add.png) no-repeat center;
     display: inherit;
+    margin-top: 68px;
 }
 
 .add-album-name{
@@ -275,4 +281,64 @@ p.replace-avatar-line2{
     float: right;
     width: 40px;
     height: 30px;
+}
+
+.mobile{
+
+    margin-left: 40px;
+}
+
+
+
+/*上传文件Css*/
+
+.nav-length{
+
+    margin-left: 38px;
+    margin-right: 1px;
+}
+.label-top{
+    margin-top: 4px;
+}
+
+.upload-width{
+
+    width: 200px;
+}
+
+input.album-position{
+
+    width:200px;
+    margin-bottom:18px;
+}
+
+.album-div-position{
+
+   margin-left: 40px;
+}
+
+.upload-controls{
+
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/*个人日记*/
+.deleteLabel{
+
+    margin-bottom: 4px;
+    margin-right: 4px;
+    float: right;
+    cursor: default;
+}
+
+.position{
+
+    margin-left: 50px;
+}
+
+#diaryId{
+
+    float: left;
+    margin-left: 10px;
 }

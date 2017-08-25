@@ -19,7 +19,7 @@ public class PersonalDiaryTest {
 
     @Test
     public void personalDiaryTest(){
-        System.out.println(personalDiaryService.getPersonalDiaryCount());
+        //System.out.println(personalDiaryService.getPersonalDiaryCount());
        /* System.out.println(personalDiaryService.getAllPersonalDiary(1).size());*/
     }
 

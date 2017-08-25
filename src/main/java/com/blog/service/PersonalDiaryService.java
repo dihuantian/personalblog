@@ -9,9 +9,9 @@ import java.util.List;
  */
 public interface PersonalDiaryService {
 
-    List<PersonalDiary> getAllPersonalDiary(int page);
+    List<PersonalDiary> getAllPersonalDiary();
 
-    boolean personalDiarySave(PersonalDiary personalDiary);
+    String  personalDiarySave(PersonalDiary personalDiary);
 
-    int getPersonalDiaryCount();
+    String deleteDiary(int diaryId);
 }

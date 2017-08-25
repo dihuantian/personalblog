@@ -5,56 +5,125 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring-mybatis.xml</param-value>
-  </context-param>
+
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>personalblog.root</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j.properties</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>log4jRefreshInterval</param-name>
+        <param-value>3000</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring-mybatis.xml</param-value>
+    </context-param>
 
     <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
-  <!--将所有请求转交给SpringMVC-->
-  <servlet>
-    <servlet-name>springmvc</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:springmvc-servlet.xml</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-    <async-supported>true</async-supported>
-  </servlet>
+    <!--将所有请求转交给SpringMVC的DispatcherServlet，由它负责请求分发-->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+        <multipart-config>
+            <max-file-size>209715200</max-file-size>
+            <max-request-size>209715200</max-request-size>
+        </multipart-config>
+    </servlet>
 
-  <servlet-mapping>
-    <servlet-name>springmvc</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 
-  <servlet-mapping>
-    <servlet-name>springmvc</servlet-name>
-    <url-pattern>/index</url-pattern>
-  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
 
-  <!--保存所有Session会话-->
-  <listener>
-    <listener-class>com.blog.filterAuthority.GetSessionSave</listener-class>
-  </listener>
+    <!--保存所有Session会话-->
+    <listener>
+        <listener-class>com.blog.filterAuthority.GetSessionSave</listener-class>
+    </listener>
 
-  <!--获取会话(session)列表,防止异地登录或者是创建新的Session登录-->
-  <filter>
-    <filter-name>sessionList</filter-name>
-    <filter-class>com.blog.filterAuthority.SessionList</filter-class>
-    <async-supported>true</async-supported>
-  </filter>
+    <!--获取会话(session)列表,防止异地登录或者是创建新的Session登录-->
+    <filter>
+        <filter-name>sessionList</filter-name>
+        <filter-class>com.blog.filterAuthority.SessionList</filter-class>
+        <async-supported>true</async-supported>
+    </filter>
 
-  <filter-mapping>
-    <filter-name>sessionList</filter-name>
-    <url-pattern>/</url-pattern>
-  </filter-mapping>
+    <!--设置字符编码过滤器-->
+    <filter>
+        <filter-name>charEncoding</filter-name>
+        <filter-class>com.blog.filterAuthority.CharEncoding</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+            <param-name>characterSet</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
 
-  <welcome-file-list>
-    <welcome-file>index</welcome-file>
-  </welcome-file-list>
+    <!--权限拦截器blogger=1-->
+    <filter>
+        <filter-name>Authority</filter-name>
+        <filter-class>com.blog.filterAuthority.AuthorityInterception</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+            <param-name>blogger</param-name>
+            <param-value>1</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>charEncoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>sessionList</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>Authority</filter-name>
+        <url-pattern>/backstage/*</url-pattern>
+    </filter-mapping>
+
+
+    <!--静态资源获取-->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.png</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.gtf</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index</welcome-file>
+    </welcome-file-list>
 
 </web-app>

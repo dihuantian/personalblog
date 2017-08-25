@@ -19,7 +19,7 @@
                 <div>
                     <input type="text" class="inputIdenticalOrnament" placeholder="手机号" /><br>
                     <input type="text" class="inputIdenticalOrnament registerNumber" placeholder="短信验证"/>
-                    <a href="" class="getIdentifyingCodeLink"><span>获得短信验证码</span></a><br>
+                    <a class="getIdentifyingCodeLink"><span>获得短信验证码</span></a><br>
                     <input type="password" class="inputIdenticalOrnament" placeholder="设置密码" /><br>
                     <input type="password" class="inputIdenticalOrnament" placeholder="请再次输入密码" /><br>
                 </div>
@@ -54,9 +54,9 @@
             </ul>
         </div>
         <div class="fromDiv">
-            <form class="registerForm" action="/registerUser" method="get">
+            <form class="registerForm" action="/register/registerUser" method="get">
                 <div>
-                    <input type="text" name="userEmail" class="inputIdenticalOrnament" placeholder="邮箱" /><br>
+                    <input type="text" name="userName" class="inputIdenticalOrnament" placeholder="邮箱或用户名" /><br>
                     <input type="text" name="verificationCode" class="inputIdenticalOrnament registerNumber" placeholder="邮箱验证"/>
                     <a href="" class="getIdentifyingCodeLink"><span>获得邮箱验证码</span></a><br>
                     <input type="password" name="password" class="inputIdenticalOrnament" placeholder="设置密码" /><br>
@@ -80,6 +80,7 @@
             <span class="restsLink userProtocol">
                 <input type="checkbox" style="margin-left: 120px"/>我已阅读并同意<a href="#"  class="linkIdenticalOrnament">《用户服务协议》</a>
             </span>
+            <span class="linkIdenticalOrnament immediateLogin" title="不好意思,注册功能还没有彻底完成,敬请期待。(注册成功会跳转登录页面,反之亦然。)">提示</span>
             <a href="#" class="linkIdenticalOrnament immediateLogin">直接登录></a>
         </div>
     </div>

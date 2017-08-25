@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,8 +20,8 @@
                 <span class="colse-span glyphicon glyphicon-remove"></span>
             </div>
             <div class="panel-body">
-                <form>
-                    <input type="text" class="form-control" placeholder="相册名">
+                <form id="add_albumFrom"  method="post">
+                    <input name="albumname" type="text" class="form-control" placeholder="相册名">
                     <div class="confirm-cancel">
                         <button type="button" class="btn btn-primary confirm-button">确认</button>
                         <button type="button" class="btn btn-primary cancel-button">取消</button>
@@ -30,5 +31,5 @@
         </div>
     </div>
 </body>
-<script src="../../JavaScript/CommonalityJavaQuery/upload.js"></script>
+
 </html>

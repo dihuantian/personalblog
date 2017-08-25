@@ -70,6 +70,10 @@ public class Bowen {
      *
      * @mbggenerated Fri Jun 23 16:50:23 CST 2017
      */
+
+
+    private UserInfo userInfo;
+
     public Integer getBowenid() {
         return bowenid;
     }
@@ -228,5 +232,13 @@ public class Bowen {
      */
     public void setBowencreatetime(Date bowencreatetime) {
         this.bowencreatetime = bowencreatetime;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
 }
